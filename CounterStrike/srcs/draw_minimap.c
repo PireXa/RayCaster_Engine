@@ -18,9 +18,9 @@ void	put_tile(t_img img, int curr_x, int curr_y, int clr)
 
 	x = curr_x - 1;
 	y = curr_y - 1;
-	while (++x < curr_x + MAP_SCALE)
+	while (++x < curr_x + MAP_SCALE - 1)
 	{
-		while (++y < curr_y + MAP_SCALE)
+		while (++y < curr_y + MAP_SCALE - 1)
 			put_pxl(&img, x, y, clr);
 		y = curr_y - 1;
 	}
@@ -46,12 +46,12 @@ void	draw_minimap(t_main *cs)
 		while (cs->mapdata[i][++e] != '\0')
 		{
 			if (cs->mapdata[i][e] == '0')
-				put_tile(cs->map, curr_x, curr_y, 0x76f6d3);
+				put_tile(cs->map, curr_x, curr_y, FLOOR_COLOR);
 			else if (cs->mapdata[i][e] == '1')
-				put_tile(cs->map, curr_x, curr_y, 0x6a6a6a);
+				put_tile(cs->map, curr_x, curr_y, WALL_COLOR);
 			else if (cs->mapdata[i][e] == 'P')
 			{
-				put_tile(cs->map, curr_x, curr_y, 0x76f6d3);
+				put_tile(cs->map, curr_x, curr_y, FLOOR_COLOR);
 				cs->ppos.x = curr_x + (MAP_SCALE / 2);
 				cs->ppos.y = curr_y + (MAP_SCALE / 2);
 			}

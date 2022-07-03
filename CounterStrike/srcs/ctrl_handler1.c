@@ -2,7 +2,12 @@
 
 void	reset_img(t_main *cs)
 {
-	mlx_clear_window(cs->data.mlx, cs->data.mlx_win);
+	ft_bzero(cs->rc.addr, WIND_H * WIND_W * (cs->rc.bi_per_pxl / 8));
+	ft_bzero(cs->p.addr, PLAYER_SCALE * PLAYER_SCALE * (cs->p.bi_per_pxl / 8));
+	ft_bzero(cs->map.addr, (WIND_H / 2.9) * (WIND_W / 2.9) * (cs->map.bi_per_pxl / 8));
+	mlx_destroy_image(cs->data.mlx, cs->rc.img);
+	mlx_destroy_image(cs->data.mlx, cs->map.img);
+	mlx_destroy_image(cs->data.mlx, cs->p.img);
 }
 
 t_counters	p_position_on_map(int x, int y)
@@ -175,6 +180,7 @@ void    look_right(t_main *cs)
 
 void	look(int key, t_main *cs)
 {
+//	reset_img(cs);	
 	if (key == 12)
 		look_left(cs);
 	else if (key == 14)

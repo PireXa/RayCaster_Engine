@@ -29,4 +29,6 @@ void	img_initializer(t_main *cs)
 	cs->map.addr = mlx_get_data_addr(cs->map.img, &cs->map.bi_per_pxl, &cs->map.line_length, &cs->map.endian);
 	cs->p.img = mlx_new_image(cs->data.mlx, PLAYER_SCALE, PLAYER_SCALE);
 	cs->p.addr = mlx_get_data_addr(cs->p.img, &cs->p.bi_per_pxl, &cs->p.line_length, &cs->p.endian);
+	cs->rc.img = mlx_new_image(cs->data.mlx, WIND_W, WIND_H);
+	cs->rc.addr = mlx_get_data_addr(cs->rc.img, &cs->rc.bi_per_pxl, &cs->rc.line_length, &cs->rc.endian);
 }

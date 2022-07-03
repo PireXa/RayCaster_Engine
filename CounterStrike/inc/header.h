@@ -18,6 +18,14 @@
 # define PLAYER_SCALE	11	//11
 # define RAY_LENGTH	350	
 # define STEP		2	//5
+# define PLAYER_COLOR	0x0000ff
+# define WALL_COLOR	0x6a6a6a
+# define FLOOR_COLOR	0x76f6d3
+# define RAY_COLOR	0xff0000
+# define POV		0.5
+# define RAY_NUM	251
+# define MAX_DIST	700
+# define WALL_HEIGHT	320
 
 typedef	struct	s_img {
 	void	*img;
@@ -44,6 +52,7 @@ typedef struct s_main {
         t_wind   data;
 	t_img	map;
 	t_img	p;
+	t_img	rc;
         t_p_pos ppos;
 	char	**mapdata;
 }               t_main;
@@ -93,6 +102,8 @@ t_counters      p_position_on_map(int x, int y);
 
 //GRAPHIC FUNCTIONS
 
+void    reset_img(t_main *cs);
+
 void	put_pxl(t_img *img, int x, int y, int color);
 
 t_wind	initialize_wind();
@@ -107,7 +118,9 @@ void	image_to_window(t_main *cs);
 
 void	draw_rays2D(t_main *cs);
 
-void    ray_drawer(float x1, int y1, int x2, int y2, t_img img);
+void    ray_drawer(float pov_ang, float ray_ang, float x1, int y1, int x2, int y2, t_img img, t_main *cs);
+
+void    render_3d(t_main *cs, float pov_ang, float ray_ang, float x1, float y1, int x2, int y2);
 
 //CONTROLS
 

@@ -11,7 +11,7 @@ void	draw_player_pos(t_main *cs)
 	{
 		while (++e < PLAYER_SCALE)
 		{
-			put_pxl(&cs->p, i, e, 0x0000ff);
+			put_pxl(&cs->p, i, e, PLAYER_COLOR);
 		}
 		e = -1;
 	}
