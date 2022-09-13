@@ -7,4 +7,4 @@ Using mlx (graphics library for 42 school) version for MacOs.
 - Minimap
 - FPS counter
 <br />
-A lot of stuff to be fixed but this was a learning exercise, I am moving on to more manly stuff like actually using **opengl**
+A lot of stuff to be fixed but this was a learning exercise, I am moving on to more manly stuff like actually using **Opengl
