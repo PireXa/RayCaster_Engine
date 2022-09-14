@@ -1,6 +1,5 @@
 ### RayCasting Engine
 Using mlx (graphics library for 42 school) version for MacOs.
----
 ### Gameplay Features
 - Look everywhere with mouse
 - Ability to jump
