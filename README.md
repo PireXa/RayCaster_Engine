@@ -25,4 +25,4 @@ Using mlx (graphics library for 42 school) version for MacOs.
 ## Jumping
 ![SS6](https://github.com/PireXa/RayCaster_Engine/blob/main/ScreenShots/cs2.png)
 ---
-A lot of stuff to be fixed but this was a learning exercise, I am moving on to more manly stuff like actually using OpenGl
+A lot of stuff to be fixed but this was a learning exercise, I am moving on to more manly stuff like actually using OpenGL
